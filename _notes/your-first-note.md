@@ -1,5 +1,7 @@
 ---
 title: Your first seed
+tags: 
+date: 2025-06-16
 ---
 
 ### Welcome!

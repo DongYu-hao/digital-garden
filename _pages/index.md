@@ -4,19 +4,23 @@ title: Home
 id: home
 permalink: /
 ---
+<strong style="color:grey">Latest</strong>
+{% assign latest_post = site.notes | sort: "last_modified_at_timestamp" | reverse | first %}
+{% if latest_post %}
+  <article class="latest-post-preview">
+    <p class="post-title">
+      <a href="{{ site.baseurl }}{{ latest_post.url }}">{{ latest_post.title }}</a>
+    </p>
+    <p class="post-meta">
+      {{ latest_post.last_modified_at | date: "%B %d, %Y" }}
+    </p>
+    <div class="post-excerpt">
+      {{ latest_post.content | strip_html | truncate: 120 }}
+    </div>
+  </article>
+{% endif %}
 
-# Welcome! 🌱
-
-<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  Take a look at <span style="font-weight: bold">[[Your first note]]</span> to get started on your exploration.
-</p>
-
-This digital garden template is free, open-source, and [available on GitHub here](https://github.com/maximevaillancourt/digital-garden-jekyll-template).
-
-The easiest way to get started is to read this [step-by-step guide explaining how to set this up from scratch](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll).
-
-<strong>Recently updated notes</strong>
-
+<strong style="color:grey">Recently</strong>
 <ul>
   {% assign recent_notes = site.notes | sort: "last_modified_at_timestamp" | reverse %}
   {% for note in recent_notes limit: 5 %}

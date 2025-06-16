@@ -8,6 +8,7 @@ $font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial,
   sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
 
 body {
+  background-color: rgb(255, 252, 240);
   box-sizing: content-box;
   font-family: $font-family;
   margin: 0 auto;
@@ -143,4 +144,32 @@ code {
 .invalid-link-brackets {
   color: #ccc;
   cursor: help;
+}
+
+/* 定位到包含在 article.latest-post-preview 下的这三个元素 */
+.latest-post-preview .post-title {
+    margin-top: 0;    /* 确保标题上方没有外边距 */
+    margin-bottom: 0; /* 移除标题下方的外边距 */
+    /* 可选：调整标题文本的行高，如果标题是多行的话 */
+    line-height: 1.2; /* 可以根据需要调整这个值 */
+}
+
+.latest-post-preview .post-meta {
+    margin-top: 0;    /* 移除 meta 信息上方的外边距 */
+    margin-bottom: 0; /* 移除 meta 信息下方的外边距 */
+    /* 确保内联样式不会被覆盖，或者将 color 和 font-size 移到这里 */
+    color: grey;
+    font-size: 14px;
+    /* 可选：调整 meta 信息的行高 */
+    line-height: 1.2; /* 可以根据需要调整这个值 */
+}
+
+.latest-post-preview .post-excerpt {
+    margin-top: 0;    /* 移除摘要上方外边距 */
+    margin-bottom: 0; /* 移除摘要下方外边距 */
+    /* 确保内联样式不会被覆盖，或者将 color 和 font-size 移到这里 */
+    color: grey;
+    font-size: 14px;
+    /* 调整摘要文本的行高，这对于多行文本尤其重要 */
+    line-height: 1.4; /* 建议稍大于 1，以保证多行文本可读性，根据需要调整 */
 }
